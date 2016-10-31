@@ -5,7 +5,7 @@ language: node_js
 node_js:
 - '6'
 
-before_deploy:
+before_script:
 - npm install -g serverless
 - npm install
 - touch .env
@@ -13,5 +13,5 @@ before_deploy:
 - echo "MAILCHIMP_API_KEY=\"$MAILCHIMP_API_KEY\"" >> .env
 - echo "MAILCHIMP_API_URI=\"$MAILCHIMP_API_URI\"" >> .env
 
-deploy:
+script:
 - sls deploy --stage prod
