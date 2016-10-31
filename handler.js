@@ -18,7 +18,7 @@ module.exports.subscribeToRecruitment = (event, context, callback) => {
   }, function (err) {
 
     const response = {
-      statusCode: 400,
+      statusCode: 200,
       body: JSON.stringify({ success: false, message: err.message }),
     };
 
