@@ -7,7 +7,6 @@ node_js:
 
 before_script:
 - npm install -g serverless
-- npm install
 - touch .env
 - echo "MAILCHIMP_USERNAME=\$MAILCHIMP_USERNAME\"" >> .env
 - echo "MAILCHIMP_API_KEY=\"$MAILCHIMP_API_KEY\"" >> .env
