@@ -1,16 +1,29 @@
 'use strict';
 
-module.exports.hello = (event, context, callback) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  };
+require('dotenv').config();
 
-  callback(null, response);
+var subscribeToRecruitment = require('./lib/subscribeToRecruitment');
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
+module.exports.subscribeToRecruitment = (event, context, callback) => {
+
+  subscribeToRecruitment(JSON.parse(event.body)).then(function (result) {
+
+    const response = {
+      statusCode: 200,
+      body: JSON.stringify({ success: true, message: result }),
+    };
+
+    callback(null, response);
+
+  }, function (err) {
+
+    const response = {
+      statusCode: 400,
+      body: JSON.stringify({ success: false, message: err.message }),
+    };
+
+    callback(null, response);
+
+  });
+
 };

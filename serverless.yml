@@ -17,6 +17,18 @@ provider:
   name: aws
   runtime: nodejs4.3
 
+
+functions:
+  hello:
+    handler: handler.subscribeToRecruitment
+    events:
+      - http:
+          path: recruitment
+          method: post
+
+plugins:
+  - serverless-offline
+
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
@@ -42,9 +54,6 @@ provider:
 #    - exclude-me.js
 #  artifact: my-service-code.zip
 
-functions:
-  hello:
-    handler: handler.hello
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

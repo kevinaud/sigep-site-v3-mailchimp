@@ -1,0 +1,28 @@
+{
+  "name": "mailchimp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinaud/sigep-site-v3-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinaud/sigep-site-v3-backend/issues"
+  },
+  "homepage": "https://github.com/kevinaud/sigep-site-v3-backend#readme",
+  "devDependencies": {
+    "serverless-offline": "^3.2.1"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "dotenv": "^2.0.0",
+    "request": "^2.76.0",
+    "request-promise": "^4.1.1"
+  }
+}
