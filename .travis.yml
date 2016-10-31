@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+
+language: node_js
+node_js:
+- '6'
+
+before_deploy:
+- npm install -g serverless
+- npm install
+- touch .env
+- echo "MAILCHIMP_USERNAME=\"Kevin_Aud\"" >> .env
+- echo "MAILCHIMP_API_KEY=\"e9b77dae04214e7af6bef5cc1a5de5b8-us13\"" >> .env
+- echo "MAILCHIMP_API_URI=\"https://us13.api.mailchimp.com/3.0\"" >> .env
+
+deploy:
+- sls deploy --stage prod
