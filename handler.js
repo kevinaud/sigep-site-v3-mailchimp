@@ -10,6 +10,9 @@ module.exports.subscribeToRecruitment = (event, context, callback) => {
 
     const response = {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*" // Required for CORS support to work
+      },
       body: JSON.stringify({ success: true, message: result }),
     };
 
@@ -19,6 +22,9 @@ module.exports.subscribeToRecruitment = (event, context, callback) => {
 
     const response = {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*" // Required for CORS support to work
+      },
       body: JSON.stringify({ success: false, message: err.message }),
     };
 
