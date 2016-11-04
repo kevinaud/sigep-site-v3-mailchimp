@@ -19,11 +19,19 @@ provider:
 
 
 functions:
-  hello:
+  subscribeToRecruitment:
     handler: handler.subscribeToRecruitment
     events:
       - http:
           path: recruitment
+          method: post
+          cors: true
+
+  subscribeToAlumni:
+    handler: handler.subscribeToAlumni
+    events:
+      - http:
+          path: alumni
           method: post
           cors: true
 
